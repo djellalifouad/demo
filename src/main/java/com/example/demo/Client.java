@@ -3,6 +3,7 @@ package com.example.demo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -16,8 +17,10 @@ import java.util.Collection;
 public class Client {
     @Id
     private Long idClient;
+    private String nom;
+
+    @ToString.Exclude
    @OneToMany(mappedBy = "client")
    private Collection<Compte> LesComptes;
-
 
 }
